@@ -3,6 +3,7 @@ SampleApp::Application.routes.draw do
 
   get "paginas_estaticas/help"
   get "paginas_estaticas/about"
+  get "paginas_estaticas/contact"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
