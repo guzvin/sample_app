@@ -9,10 +9,14 @@ describe "Paginas estaticas" do
       visit '/paginas_estaticas/home'
       page.should have_selector('h1', :text => 'Sample App')
     end
-    it "deve ter o title 'Home'" do
+    it "deve ter o title com titulo_base" do
       visit '/paginas_estaticas/home'
       page.should have_selector('title', 
-      							:text => "#{titulo_base} | Home")
+      							:text => "#{titulo_base}")
+    end
+    it "nao deve ter um titulo customizado" do
+      visit '/paginas_estaticas/home'
+      page.should_not have_selector('title', :text => '| Home')
     end
   end
 
